@@ -3,23 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zidan AI - الذكاء الاصطناعي المتصل بالإنترنت</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Roma Shop - خدمات التواصل الاجتماعي</title>
     <style>
         :root {
-            --primary: #10a37f;
-            --primary-dark: #0d8a6d;
-            --secondary: #5436da;
-            --accent: #ff6b6b;
-            --warning: #f39c12;
-            --success: #2ecc71;
-            --info: #3498db;
-            --dark: #1a1a2e;
-            --darker: #0f0f1a;
-            --light: #f5f5f7;
-            --gray: #8e8ea0;
-            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
-            --glow: 0 0 30px rgba(16, 163, 127, 0.4);
+            --gold: #D4AF37;
+            --dark-gold: #B8860B;
+            --black: #121212;
+            --dark-gray: #1E1E1E;
+            --light-gray: #2C2C2C;
+            --white: #FFFFFF;
+            --light-gold: #F5E6B3;
         }
         
         * {
@@ -30,32 +23,26 @@
         }
         
         body {
-            background-color: var(--darker);
-            color: var(--light);
-            min-height: 100vh;
-            overflow-x: hidden;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(16, 163, 127, 0.15) 0%, transparent 25%),
-                radial-gradient(circle at 90% 80%, rgba(84, 54, 218, 0.15) 0%, transparent 25%),
-                radial-gradient(circle at 50% 50%, rgba(255, 107, 107, 0.1) 0%, transparent 30%);
+            background-color: var(--black);
+            color: var(--white);
+            line-height: 1.6;
         }
         
         .container {
-            max-width: 1400px;
+            width: 90%;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
+            padding: 0 15px;
         }
         
+        /* Header Styles */
         header {
-            padding: 15px 0;
-            position: relative;
-            z-index: 10;
-            background: rgba(26, 26, 46, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            background: linear-gradient(to right, var(--black), var(--dark-gray));
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
         
         .header-content {
@@ -67,799 +54,1001 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 15px;
         }
         
-        .logo-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--gradient);
-            border-radius: 12px;
+        .logo h1 {
+            color: var(--gold);
+            font-size: 28px;
+            margin-right: 10px;
+        }
+        
+        .logo span {
+            color: var(--white);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--gold);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--gold);
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1611605698335-8b1569810432?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: var(--gold);
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--light-gold);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--gold);
+            color: var(--black);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+        
+        .cta-button:hover {
+            background-color: var(--dark-gold);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--gold);
+            font-size: 36px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 3px;
+            background-color: var(--gold);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: var(--dark-gray);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+        
+        .service-icon {
+            background-color: var(--gold);
+            height: 80px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 22px;
-            font-weight: bold;
-            box-shadow: var(--glow);
-            animation: pulse 2s infinite;
+            font-size: 40px;
+            color: var(--black);
         }
         
-        .logo-text {
-            font-size: 26px;
-            font-weight: 800;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 15px rgba(16, 163, 127, 0.4);
-        }
-        
-        .connection-status {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background: rgba(46, 204, 113, 0.1);
-            padding: 8px 15px;
-            border-radius: 20px;
-            border: 1px solid rgba(46, 204, 113, 0.3);
-        }
-        
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--success);
-            animation: pulse 2s infinite;
-        }
-        
-        .chat-container {
-            display: flex;
-            flex: 1;
-            gap: 25px;
-            padding: 25px 0;
-            height: calc(100vh - 80px);
-        }
-        
-        .sidebar {
-            width: 320px;
-            background: rgba(255, 255, 255, 0.04);
-            backdrop-filter: blur(20px);
-            border-radius: 20px;
+        .service-content {
             padding: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
         
-        .search-box {
-            position: relative;
+        .service-content h3 {
+            color: var(--gold);
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        
+        .service-content p {
+            margin-bottom: 20px;
+            color: #ccc;
+        }
+        
+        .pricing {
+            background-color: var(--light-gray);
+            padding: 10px;
+            border-radius: 5px;
             margin-bottom: 20px;
         }
         
-        .search-input {
-            width: 100%;
-            padding: 12px 15px;
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            color: var(--light);
-            font-size: 14px;
-        }
-        
-        .search-input:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-        
-        .web-resources {
-            margin-bottom: 25px;
-        }
-        
-        .resources-title {
-            font-size: 16px;
-            color: var(--gray);
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .resources-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 10px;
-        }
-        
-        .resource {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 12px;
-            border-radius: 10px;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            transition: all 0.3s;
-            cursor: pointer;
-        }
-        
-        .resource:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateX(5px);
-        }
-        
-        .resource i {
-            color: var(--info);
-            font-size: 16px;
-        }
-        
-        .main-chat {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            background: rgba(255, 255, 255, 0.04);
-            backdrop-filter: blur(20px);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-        
-        .chat-header {
-            padding: 20px 25px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            background: rgba(26, 26, 46, 0.8);
-        }
-        
-        .chat-avatar {
-            width: 45px;
-            height: 45px;
-            background: var(--gradient);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            box-shadow: var(--glow);
-        }
-        
-        .chat-info {
-            flex: 1;
-        }
-        
-        .chat-title {
-            font-size: 18px;
-            font-weight: 600;
+        .pricing p {
             margin-bottom: 5px;
         }
         
-        .chat-subtitle {
-            font-size: 14px;
-            color: var(--gray);
+        .price {
+            font-weight: bold;
+            color: var(--gold);
         }
         
-        .chat-messages {
-            flex: 1;
-            padding: 25px;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-        
-        .message {
-            max-width: 80%;
-            padding: 20px;
-            border-radius: 20px;
-            line-height: 1.6;
-            position: relative;
-            animation: fadeIn 0.4s ease-out;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .user-message {
-            align-self: flex-end;
-            background: var(--primary);
-            border-bottom-right-radius: 5px;
-            color: white;
-        }
-        
-        .ai-message {
-            align-self: flex-start;
-            background: rgba(255, 255, 255, 0.08);
-            border-bottom-left-radius: 5px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .message-content {
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            font-size: 16px;
-        }
-        
-        .web-source {
-            background: rgba(52, 152, 219, 0.1);
-            border: 1px solid rgba(52, 152, 219, 0.3);
-            border-radius: 8px;
-            padding: 10px;
-            margin-top: 10px;
-            font-size: 14px;
-        }
-        
-        .source-link {
-            color: var(--info);
-            text-decoration: none;
-        }
-        
-        .source-link:hover {
-            text-decoration: underline;
-        }
-        
-        .thinking-indicator {
-            display: none;
-            padding: 20px;
-            align-items: center;
-            gap: 15px;
-            color: var(--gray);
-            font-size: 15px;
-            background: rgba(255, 255, 255, 0.05);
-            margin: 0 25px;
-            border-radius: 15px;
-            align-self: flex-start;
-            max-width: 300px;
-        }
-        
-        .searching-web {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 14px;
-            color: var(--info);
-            margin-top: 5px;
-        }
-        
-        .chat-input-container {
-            padding: 25px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            background: rgba(26, 26, 46, 0.8);
-        }
-        
-        .input-wrapper {
-            display: flex;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .input-wrapper:focus-within {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 2px rgba(16, 163, 127, 0.2);
-        }
-        
-        .chat-input {
-            flex: 1;
-            background: transparent;
+        .buy-button {
+            display: block;
+            width: 100%;
+            background-color: var(--gold);
+            color: var(--black);
             border: none;
-            padding: 18px 20px;
-            color: var(--light);
-            font-size: 16px;
-            resize: none;
-            max-height: 150px;
-            min-height: 60px;
-            outline: none;
-            line-height: 1.5;
-        }
-        
-        .send-btn {
-            background: transparent;
-            border: none;
-            color: var(--gray);
-            padding: 0 20px;
+            padding: 12px;
+            border-radius: 5px;
+            font-weight: bold;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: background-color 0.3s;
+        }
+        
+        .buy-button:hover {
+            background-color: var(--dark-gold);
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        
+        .modal-content {
+            background-color: var(--dark-gray);
+            margin: 5% auto;
+            width: 90%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+            animation: modalFade 0.3s;
+        }
+        
+        @keyframes modalFade {
+            from {opacity: 0; transform: translateY(-50px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+        
+        .modal-header {
+            background-color: var(--gold);
+            color: var(--black);
+            padding: 20px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            font-size: 18px;
         }
         
-        .send-btn:hover {
-            color: var(--primary);
+        .modal-header h3 {
+            margin: 0;
         }
         
-        .empty-chat {
-            flex: 1;
+        .close-button {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--black);
+        }
+        
+        .modal-body {
+            padding: 25px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--gold);
+            font-weight: 500;
+        }
+        
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #444;
+            border-radius: 5px;
+            background-color: var(--light-gray);
+            color: var(--white);
+            font-size: 16px;
+        }
+        
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+        
+        .submit-button {
+            background-color: var(--gold);
+            color: var(--black);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+            margin-top: 10px;
+        }
+        
+        .submit-button:hover {
+            background-color: var(--dark-gold);
+        }
+        
+        /* Admin Panel */
+        .admin-panel {
+            display: none;
+            padding: 50px 0;
+        }
+        
+        .admin-header {
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 40px;
-            color: var(--gray);
-        }
-        
-        .empty-chat-icon {
-            font-size: 80px;
-            margin-bottom: 25px;
-            opacity: 0.7;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .empty-chat h2 {
-            font-size: 28px;
-            margin-bottom: 15px;
-            color: var(--light);
-        }
-        
-        .empty-chat p {
-            font-size: 17px;
-            max-width: 700px;
-            line-height: 1.6;
             margin-bottom: 30px;
         }
         
-        .news-feed {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            padding: 20px;
+        .admin-tabs {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #444;
+        }
+        
+        .admin-tab {
+            padding: 12px 25px;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .admin-tab.active {
+            border-bottom: 3px solid var(--gold);
+            color: var(--gold);
+        }
+        
+        .orders-table {
+            width: 100%;
+            border-collapse: collapse;
             margin-top: 20px;
         }
         
-        .news-title {
-            font-size: 16px;
-            margin-bottom: 15px;
+        .orders-table th, .orders-table td {
+            padding: 12px 15px;
+            text-align: right;
+            border-bottom: 1px solid #444;
+        }
+        
+        .orders-table th {
+            background-color: var(--light-gray);
+            color: var(--gold);
+        }
+        
+        .status-pending {
+            color: #FFA500;
+        }
+        
+        .status-completed {
+            color: #4CAF50;
+        }
+        
+        .complete-btn {
+            background-color: var(--gold);
+            color: var(--black);
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-gray);
+            padding: 40px 0 20px;
+            margin-top: 50px;
+        }
+        
+        .footer-content {
             display: flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--info);
+            justify-content: space-between;
+            flex-wrap: wrap;
         }
         
-        .news-item {
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 20px;
         }
         
-        .news-item:last-child {
-            border-bottom: none;
+        .footer-section h3 {
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-size: 20px;
         }
         
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(15px); }
-            to { opacity: 1; transform: translateY(0); }
+        .footer-section p, .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            margin-bottom: 10px;
+            display: block;
         }
         
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+        .footer-section a:hover {
+            color: var(--gold);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #999;
         }
         
         /* Responsive */
-        @media (max-width: 1200px) {
-            .sidebar {
-                width: 280px;
-            }
-        }
-        
-        @media (max-width: 968px) {
-            .sidebar {
-                display: none;
-            }
-        }
-        
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
-                gap: 15px;
             }
             
-            .message {
-                max-width: 95%;
+            nav ul {
+                margin-top: 15px;
+            }
+            
+            .hero h2 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .admin-tabs {
+                flex-wrap: wrap;
+            }
+            
+            .admin-tab {
+                flex: 1;
+                min-width: 120px;
+                text-align: center;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
+    <!-- Header -->
+    <header>
+        <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <div class="logo-icon">Z</div>
-                    <div class="logo-text">Zidan AI</div>
+                    <h1>Roma <span>Shop</span></h1>
                 </div>
-                
-                <div class="connection-status">
-                    <div class="status-dot"></div>
-                    <span>متصل بالإنترنت - معلومات مباشرة</span>
-                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#services">الخدمات</a></li>
+                        <li><a href="#" id="admin-link">لوحة التحكم</a></li>
+                        <li><a href="#contact">اتصل بنا</a></li>
+                    </ul>
+                </nav>
             </div>
-        </header>
-        
-        <div class="chat-container">
-            <div class="sidebar">
-                <div class="search-box">
-                    <input type="text" class="search-input" placeholder="🔍 بحث في مصادر الإنترنت...">
-                </div>
-                
-                <div class="web-resources">
-                    <div class="resources-title">
-                        <i class="fas fa-globe"></i>
-                        <span>مصادر الإنترنت المباشرة</span>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>خدمات التواصل الاجتماعي الأفضل</h2>
+            <p>احصل على متابعين حقيقيين، لايكات وتعليقات لتعزيز وجودك على منصات التواصل الاجتماعي بأفضل الأسعار</p>
+            <a href="#services" class="cta-button">اطلب الآن</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">خدماتنا</h2>
+            <div class="services-grid">
+                <!-- Followers Service -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i>👥</i>
                     </div>
-                    <div class="resources-grid">
-                        <div class="resource" onclick="searchWikipedia()">
-                            <i class="fab fa-wikipedia-w"></i>
-                            <span>ويكيبيديا العربية</span>
+                    <div class="service-content">
+                        <h3>المتابعين</h3>
+                        <p>احصل على متابعين حقيقيين لزيادة تأثيرك على منصات التواصل الاجتماعي</p>
+                        <div class="pricing">
+                            <p>تبدأ الباقات من 50 متابع = 10ج</p>
+                            <p>كل زيادة 50 متابع يزيد السعر 10ج</p>
+                            <p>حتى 5000 متابع</p>
+                            <p class="price">المدخل المطلوب: Username فقط</p>
                         </div>
-                        <div class="resource" onclick="searchNews()">
-                            <i class="fas fa-newspaper"></i>
-                            <span>الأخبار العاجلة</span>
-                        </div>
-                        <div class="resource" onclick="searchWeather()">
-                            <i class="fas fa-cloud-sun"></i>
-                            <span>أحوال الطقس</span>
-                        </div>
-                        <div class="resource" onclick="searchCurrency()">
-                            <i class="fas fa-coins"></i>
-                            <span>أسعار العملات</span>
-                        </div>
-                        <div class="resource" onclick="searchStocks()">
-                            <i class="fas fa-chart-line"></i>
-                            <span>البورصة العالمية</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="news-feed">
-                    <div class="news-title">
-                        <i class="fas fa-bolt"></i>
-                        <span>آخر الأخبار</span>
-                    </div>
-                    <div id="liveNews">
-                        <div class="news-item">جاري تحميل الأخبار المباشرة...</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="main-chat">
-                <div class="chat-header">
-                    <div class="chat-avatar">
-                        <i class="fas fa-wifi"></i>
-                    </div>
-                    <div class="chat-info">
-                        <div class="chat-title">Zidan AI المتصل بالإنترنت</div>
-                        <div class="chat-subtitle">يبحث في المصادر المباشرة - معلومات حديثة دائماً</div>
+                        <button class="buy-button" data-service="followers">اشتري الآن</button>
                     </div>
                 </div>
                 
-                <div class="chat-messages" id="chatMessages">
-                    <div class="empty-chat" id="emptyChat">
-                        <div class="empty-chat-icon">
-                            <i class="fas fa-satellite-dish"></i>
+                <!-- Likes Service -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i>👍</i>
+                    </div>
+                    <div class="service-content">
+                        <h3>اللايكات</h3>
+                        <p>زود تفاعل منشوراتك باللايكات الحقيقية لزيادة وصولك</p>
+                        <div class="pricing">
+                            <p>تبدأ الباقات من 50 لايك = 10ج</p>
+                            <p>كل زيادة 50 لايك يزيد السعر 10ج</p>
+                            <p class="price">المدخل المطلوب: Post URL فقط</p>
                         </div>
-                        <h2>مرحباً! أنا Zidan AI المتصل بالإنترنت</h2>
-                        <p>أبحث في المصادر الحية لأعطيك أحدث المعلومات! اسألني عن:</p>
-                        
-                        <div style="text-align: right; margin: 20px 0;">
-                            <div>• آخر الأخبار العالمية</div>
-                            <div>• معلومات عن أي شخصية مشهورة</div>
-                            <div>• أسعار العملات وأسواق المال</div>
-                            <div>• أحوال الطقس في أي مدينة</div>
-                            <div>• معلومات تاريخية وعلمية حديثة</div>
-                        </div>
+                        <button class="buy-button" data-service="likes">اشتري الآن</button>
                     </div>
                 </div>
                 
-                <div class="thinking-indicator" id="thinkingIndicator">
-                    <div>Zidan AI يبحث في الإنترنت...</div>
-                    <div class="searching-web">
-                        <i class="fas fa-search"></i>
-                        <span>جاري جمع المعلومات من مصادر موثوقة</span>
+                <!-- Comments Service -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i>💬</i>
                     </div>
-                </div>
-                
-                <div class="chat-input-container">
-                    <div class="input-wrapper">
-                        <textarea class="chat-input" id="chatInput" placeholder="اسأل عن أي شيء وسأبحث في الإنترنت عن أحدث المعلومات..." rows="1"></textarea>
-                        <button class="send-btn" id="sendBtn">
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
+                    <div class="service-content">
+                        <h3>التعليقات</h3>
+                        <p>اجذب المزيد من الانتباه إلى منشوراتك بتعليقات حقيقية وجذابة</p>
+                        <div class="pricing">
+                            <p>تبدأ الباقات من 50 تعليق = 10ج</p>
+                            <p>كل زيادة 50 تعليق يزيد السعر 10ج</p>
+                            <p class="price">المدخل المطلوب: Post URL فقط</p>
+                        </div>
+                        <button class="buy-button" data-service="comments">اشتري الآن</button>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- Order Modal -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">طلب خدمة المتابعين</h3>
+                <button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="orderForm">
+                    <input type="hidden" id="serviceType" name="serviceType">
+                    
+                    <div class="form-group">
+                        <label for="packageAmount">اختر الباقة:</label>
+                        <select id="packageAmount" name="packageAmount" required>
+                            <!-- Options will be populated by JavaScript -->
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="price">السعر (ج):</label>
+                        <input type="text" id="price" name="price" readonly>
+                    </div>
+                    
+                    <div class="form-group" id="usernameField">
+                        <label for="buyerUsername">اسم المستخدم (Username):</label>
+                        <input type="text" id="buyerUsername" name="buyerUsername" required>
+                    </div>
+                    
+                    <div class="form-group" id="postField" style="display: none;">
+                        <label for="buyerPost">رابط المنشور (Post URL):</label>
+                        <input type="url" id="buyerPost" name="buyerPost" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="buyerEmail">البريد الإلكتروني:</label>
+                        <input type="email" id="buyerEmail" name="buyerEmail" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="buyerPhone">رقم الهاتف:</label>
+                        <input type="tel" id="buyerPhone" name="buyerPhone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="screenshot">صورة الدفع:</label>
+                        <input type="file" id="screenshot" name="screenshot" accept="image/*" required>
+                    </div>
+                    
+                    <button type="submit" class="submit-button">تأكيد الطلب</button>
+                </form>
+            </div>
+        </div>
     </div>
 
+    <!-- Admin Panel -->
+    <section class="admin-panel" id="adminPanel">
+        <div class="container">
+            <div class="admin-header">
+                <h2 class="section-title">لوحة التحكم</h2>
+                <button id="logoutBtn" class="cta-button">تسجيل الخروج</button>
+            </div>
+            
+            <div class="admin-tabs">
+                <div class="admin-tab active" data-tab="pending">الطلبات المعلقة</div>
+                <div class="admin-tab" data-tab="completed">الطلبات المكتملة</div>
+            </div>
+            
+            <div id="pendingOrders" class="orders-tab">
+                <table class="orders-table">
+                    <thead>
+                        <tr>
+                            <th>رقم الطلب</th>
+                            <th>نوع الخدمة</th>
+                            <th>الباقة</th>
+                            <th>السعر</th>
+                            <th>البريد الإلكتروني</th>
+                            <th>رقم الهاتف</th>
+                            <th>اسم المستخدم/المنشور</th>
+                            <th>الحالة</th>
+                            <th>الإجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="pendingOrdersBody">
+                        <!-- Orders will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div id="completedOrders" class="orders-tab" style="display: none;">
+                <table class="orders-table">
+                    <thead>
+                        <tr>
+                            <th>رقم الطلب</th>
+                            <th>نوع الخدمة</th>
+                            <th>الباقة</th>
+                            <th>السعر</th>
+                            <th>البريد الإلكتروني</th>
+                            <th>رقم الهاتف</th>
+                            <th>اسم المستخدم/المنشور</th>
+                            <th>الحالة</th>
+                        </tr>
+                    </thead>
+                    <tbody id="completedOrdersBody">
+                        <!-- Orders will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>عن Roma Shop</h3>
+                    <p>نقدم أفضل خدمات التواصل الاجتماعي لمساعدة الأفراد والشركات على تعزيز وجودهم الرقمي.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>روابط سريعة</h3>
+                    <a href="#services">الخدمات</a>
+                    <a href="#contact">اتصل بنا</a>
+                </div>
+                <div class="footer-section">
+                    <h3>اتصل بنا</h3>
+                    <p>البريد الإلكتروني: maryamhamed27277@gmail.com</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Roma Shop. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
     <script>
-        // محرك البحث في الإنترنت
-        class InternetAI {
-            constructor() {
-                this.apiEndpoints = {
-                    news: 'https://newsapi.org/v2/top-headlines?country=us&apiKey=demo',
-                    wikipedia: 'https://ar.wikipedia.org/api/rest_v1/page/summary/',
-                    weather: 'https://api.openweathermap.org/data/2.5/weather',
-                    currency: 'https://api.exchangerate-api.com/v4/latest/USD'
-                };
+        // البيانات الأساسية
+        const services = {
+            followers: {
+                title: "المتابعين",
+                baseAmount: 50,
+                basePrice: 10,
+                increment: 50,
+                maxAmount: 5000,
+                inputType: "username"
+            },
+            likes: {
+                title: "اللايكات",
+                baseAmount: 50,
+                basePrice: 10,
+                increment: 50,
+                inputType: "post"
+            },
+            comments: {
+                title: "التعليقات",
+                baseAmount: 50,
+                basePrice: 10,
+                increment: 50,
+                inputType: "post"
             }
-            
-            // محاكاة البحث في الإنترنت مع معلومات حقيقية
-            async searchInternet(query) {
-                this.showThinkingIndicator();
-                
-                // محاكاة وقت البحث في الإنترنت
-                await new Promise(resolve => setTimeout(resolve, 2000 + Math.random() * 2000));
-                
-                this.hideThinkingIndicator();
-                return this.generateWebResponse(query);
-            }
-            
-            generateWebResponse(query) {
-                const q = query.toLowerCase();
-                
-                // معلومات من ويكيبيديا
-                if (q.includes('من هو') || q.includes('ما هو') || q.includes('معلومات عن')) {
-                    return this.getWikipediaInfo(q);
+        };
+
+        // محاكاة قاعدة البيانات
+        let orders = JSON.parse(localStorage.getItem('romaShopOrders')) || [];
+        let nextOrderId = parseInt(localStorage.getItem('romaShopNextOrderId')) || 1;
+
+        // العناصر الأساسية في DOM
+        const orderModal = document.getElementById('orderModal');
+        const orderForm = document.getElementById('orderForm');
+        const modalTitle = document.getElementById('modalTitle');
+        const serviceTypeInput = document.getElementById('serviceType');
+        const packageAmountSelect = document.getElementById('packageAmount');
+        const priceInput = document.getElementById('price');
+        const usernameField = document.getElementById('usernameField');
+        const postField = document.getElementById('postField');
+        const adminPanel = document.getElementById('adminPanel');
+        const adminLink = document.getElementById('admin-link');
+        const logoutBtn = document.getElementById('logoutBtn');
+        const adminTabs = document.querySelectorAll('.admin-tab');
+        const pendingOrdersBody = document.getElementById('pendingOrdersBody');
+        const completedOrdersBody = document.getElementById('completedOrdersBody');
+
+        // تهيئة الأحداث
+        document.addEventListener('DOMContentLoaded', function() {
+            // أحداث أزرار الشراء
+            document.querySelectorAll('.buy-button').forEach(button => {
+                button.addEventListener('click', function() {
+                    const service = this.getAttribute('data-service');
+                    openOrderModal(service);
+                });
+            });
+
+            // أحداث إغلاق المودال
+            document.querySelector('.close-button').addEventListener('click', closeModal);
+            window.addEventListener('click', function(event) {
+                if (event.target === orderModal) {
+                    closeModal();
                 }
+            });
+
+            // حدث تقديم الطلب
+            orderForm.addEventListener('submit', handleOrderSubmit);
+
+            // أحداث تغيير الباقة
+            packageAmountSelect.addEventListener('change', updatePrice);
+
+            // أحداث لوحة التحكم
+            adminLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                showAdminPanel();
+            });
+
+            logoutBtn.addEventListener('click', function() {
+                hideAdminPanel();
+            });
+
+            adminTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    switchAdminTab(this.getAttribute('data-tab'));
+                });
+            });
+
+            // تحميل الطلبات في لوحة التحكم
+            loadOrders();
+        });
+
+        // فتح مودال الطلب
+        function openOrderModal(service) {
+            const serviceData = services[service];
+            modalTitle.textContent = `طلب خدمة ${serviceData.title}`;
+            serviceTypeInput.value = service;
+            
+            // إعداد حقول الإدخال بناءً على نوع الخدمة
+            if (serviceData.inputType === 'username') {
+                usernameField.style.display = 'block';
+                postField.style.display = 'none';
+            } else {
+                usernameField.style.display = 'none';
+                postField.style.display = 'block';
+            }
+            
+            // تعبئة خيارات الباقات
+            populatePackageOptions(serviceData);
+            
+            // إظهار المودال
+            orderModal.style.display = 'block';
+        }
+
+        // إغلاق المودال
+        function closeModal() {
+            orderModal.style.display = 'none';
+            orderForm.reset();
+        }
+
+        // تعبئة خيارات الباقات
+        function populatePackageOptions(serviceData) {
+            packageAmountSelect.innerHTML = '';
+            
+            let amount = serviceData.baseAmount;
+            let price = serviceData.basePrice;
+            
+            while (amount <= serviceData.maxAmount) {
+                const option = document.createElement('option');
+                option.value = amount;
+                option.textContent = `${amount} - ${price}ج`;
+                packageAmountSelect.appendChild(option);
                 
-                // أخبار
-                if (q.includes('أخبار') || q.includes('حدث') || q.includes('جديد')) {
-                    return this.getNewsInfo();
+                amount += serviceData.increment;
+                price += serviceData.basePrice;
+            }
+            
+            // تحديث السعر الافتراضي
+            updatePrice();
+        }
+
+        // تحديث السعر بناءً على الباقة المختارة
+        function updatePrice() {
+            const service = serviceTypeInput.value;
+            const serviceData = services[service];
+            const selectedAmount = parseInt(packageAmountSelect.value);
+            
+            // حساب السعر بناءً على الكمية
+            const increments = (selectedAmount - serviceData.baseAmount) / serviceData.increment;
+            const price = serviceData.basePrice + (increments * serviceData.basePrice);
+            
+            priceInput.value = price;
+        }
+
+        // معالجة تقديم الطلب
+        function handleOrderSubmit(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(orderForm);
+            const service = formData.get('serviceType');
+            const serviceData = services[service];
+            
+            // إنشاء كائن الطلب
+            const order = {
+                id: nextOrderId++,
+                type: service,
+                packageAmount: parseInt(formData.get('packageAmount')),
+                price: parseInt(formData.get('price')),
+                buyerEmail: formData.get('buyerEmail'),
+                buyerPhone: formData.get('buyerPhone'),
+                status: "Pending",
+                createdAt: new Date().toISOString()
+            };
+            
+            // إضافة الحقل المناسب بناءً على نوع الخدمة
+            if (serviceData.inputType === 'username') {
+                order.buyerUsername = formData.get('buyerUsername');
+            } else {
+                order.buyerPost = formData.get('buyerPost');
+            }
+            
+            // محاكاة رفع الملف (في تطبيق حقيقي، سيتم رفع الملف إلى الخادم)
+            const screenshotFile = document.getElementById('screenshot').files[0];
+            if (screenshotFile) {
+                order.screenshot = URL.createObjectURL(screenshotFile);
+            }
+            
+            // إضافة الطلب إلى قاعدة البيانات
+            orders.push(order);
+            saveOrders();
+            
+            // إرسال إيميل للبائع (محاكاة)
+            sendSellerEmail(order);
+            
+            // إغلاق المودال وإظهار رسالة نجاح
+            closeModal();
+            alert('تم استلام طلبك بنجاح! سنقوم بالتواصل معك قريبًا.');
+        }
+
+        // حفظ الطلبات في localStorage
+        function saveOrders() {
+            localStorage.setItem('romaShopOrders', JSON.stringify(orders));
+            localStorage.setItem('romaShopNextOrderId', nextOrderId.toString());
+        }
+
+        // إرسال إيميل للبائع (محاكاة)
+        function sendSellerEmail(order) {
+            const serviceData = services[order.type];
+            const subject = "طلب جديد من Roma Shop";
+            const body = `
+                تفاصيل الطلب:
+                - نوع الخدمة: ${serviceData.title}
+                - الباقة: ${order.packageAmount}
+                - السعر: ${order.price}ج
+                - البريد الإلكتروني: ${order.buyerEmail}
+                - رقم الهاتف: ${order.buyerPhone}
+                ${order.buyerUsername ? `- اسم المستخدم: ${order.buyerUsername}` : `- رابط المنشور: ${order.buyerPost}`}
+            `;
+            
+            console.log(`إرسال إيميل إلى: maryamhamed27277@gmail.com`);
+            console.log(`الموضوع: ${subject}`);
+            console.log(`المحتوى: ${body}`);
+            
+            // في التطبيق الحقيقي، سيتم استخدام خدمة إرسال إيميلات
+        }
+
+        // إرسال إيميل للعميل (محاكاة)
+        function sendCustomerEmail(order) {
+            const subject = "تمت المعاملة بنجاح";
+            const body = `
+                عزيزي العميل،
+                
+                تم تنفيذ طلبك رقم ${order.id} بنجاح.
+                
+                شكرًا لاستخدامك خدمات Roma Shop!
+            `;
+            
+            console.log(`إرسال إيميل إلى: ${order.buyerEmail}`);
+            console.log(`الموضوع: ${subject}`);
+            console.log(`المحتوى: ${body}`);
+            
+            // في التطبيق الحقيقي، سيتم استخدام خدمة إرسال إيميلات
+        }
+
+        // إظهار لوحة التحكم
+        function showAdminPanel() {
+            adminPanel.style.display = 'block';
+            document.querySelector('header').scrollIntoView({ behavior: 'smooth' });
+            loadOrders();
+        }
+
+        // إخفاء لوحة التحكم
+        function hideAdminPanel() {
+            adminPanel.style.display = 'none';
+        }
+
+        // تبديل تبويبات لوحة التحكم
+        function switchAdminTab(tabName) {
+            // تحديث التبويبات النشطة
+            adminTabs.forEach(tab => {
+                if (tab.getAttribute('data-tab') === tabName) {
+                    tab.classList.add('active');
+                } else {
+                    tab.classList.remove('active');
                 }
-                
-                // طقس
-                if (q.includes('طقس') || q.includes('جو') || q.includes('درجة حرارة')) {
-                    return this.getWeatherInfo(q);
-                }
-                
-                // عملات
-                if (q.includes('دولار') || q.includes('يورو') || q.includes('عملة')) {
-                    return this.getCurrencyInfo();
-                }
-                
-                // أسئلة عامة مع معلومات حديثة
-                return this.getGeneralInfo(query);
-            }
+            });
             
-            getWikipediaInfo(query) {
-                const responses = {
-                    'نيلسون مانديلا': `نيلسون مانديلا (1918-2013) كان رئيس جنوب أفريقيا من 1994 إلى 1999. وهو أول رئيس أسود للبلاد، انتخب بعد فترة طويلة من نظام الفصل العنصري. حصل على جائزة نوبل للسلام عام 1993.\n\nالمصدر: ويكيبيديا`,
-                    
-                    'الذكاء الاصطناعي': `الذكاء الاصطناعي هو مجال من علوم الكمبيوتر يهدف إلى إنشاء آلات ذكية. يشهد تطوراً سريعاً في 2024 مع ظهور نماذج لغوية كبيرة مثل GPT-4.\n\nالمصدر: ويكيبيديا + آخر التحديثات`,
-                    
-                    'كأس العالم': `كأس العالم FIFA 2022 أقيم في قطر، وفازت به الأرجنتين. كأس العالم 2026 سيقام في كندا والولايات المتحدة والمكسيك.\n\nالمصدر: FIFA الرسمي`
-                };
-                
-                for (const [key, value] of Object.entries(responses)) {
-                    if (query.includes(key.toLowerCase())) {
-                        return value;
-                    }
-                }
-                
-                return `بحثت عن "${query}" في ويكيبيديا والمصادر الموثوقة. هذه المعلومات محدثة حتى اليوم.\n\nللحصول على معلومات أكثر تفصيلاً، يمكنك زيارة ويكيبيديا العربية.`;
-            }
-            
-            getNewsInfo() {
-                const currentDate = new Date().toLocaleDateString('ar-EG');
-                return `📰 آخر الأخبار العالمية - ${currentDate}:
-
-• التطورات في الذكاء الاصطناعي وتأثيرها على سوق العمل
-• مستجدات الأوضاع الاقتصادية العالمية وأسعار النفط
-• آخر التطورات التكنولوجية في مجال المركبات الكهربائية
-• مستجدات الأحداث الرياضية العالمية
-
-ℹ️ المصدر: وكالات أنباء عالمية - معلومات مباشرة`;
-            }
-            
-            getWeatherInfo(query) {
-                const cities = {
-                    'القاهرة': { temp: 28, condition: 'مشمس' },
-                    'الرياض': { temp: 35, condition: 'حار' },
-                    'دبي': { temp: 32, condition: 'مشمس' },
-                    'لندن': { temp: 15, condition: 'غائم' }
-                };
-                
-                for (const [city, info] of Object.entries(cities)) {
-                    if (query.includes(city.toLowerCase())) {
-                        return `🌤️ أحوال الطقس في ${city}:
-• درجة الحرارة: ${info.temp}°م
-• الحالة: ${info.condition}
-• الرطوبة: 45%
-• سرعة الرياح: 15 كم/س
-
-🕐 آخر تحديث: اليوم`;
-                    }
-                }
-                
-                return `🌍 أحوال الطقس العالمية:
-• القاهرة: 28°م - مشمس
-• الرياض: 35°م - حار
-• دبي: 32°م - مشمس
-• لندن: 15°م - غائم
-
-ℹ️ لمعلومات أكثر تفصيلاً عن مدينة معينة، اذكر اسم المدينة.`;
-            }
-            
-            getCurrencyInfo() {
-                const currentDate = new Date().toLocaleDateString('ar-EG');
-                return `💱 أسعار العملات الرئيسية - ${currentDate}:
-
-• الدولار الأمريكي (USD) = 3.75 ريال سعودي
-• اليورو (EUR) = 4.10 ريال سعودي
-• الجنيه الإسترليني (GBP) = 4.75 ريال سعودي
-• الين الياباني (JPY) = 0.025 ريال سعودي
-
-📈 أسعار البورصة العالمية:
-• S&P 500: ▲ +0.8%
-• NASDAQ: ▲ +1.2%
-• Dow Jones: ▲ +0.5%
-
-ℹ️ المصدر: أسعار السوق المباشرة`;
-            }
-            
-            getGeneralInfo(query) {
-                return `🔍 بحثت عن "${query}" في المصادر التالية:
-• ويكيبيديا العربية
-• الموسوعات العلمية
-• الأخبار الحديثة
-• قواعد البيانات العالمية
-
-📊 المعلومات التي وجدتها محدثة ومعتمدة من مصادر موثوقة. هل تريد تفاصيل أكثر عن أي جانب محدد؟`;
-            }
-            
-            showThinkingIndicator() {
-                const indicator = document.getElementById('thinkingIndicator');
-                indicator.style.display = 'flex';
-            }
-            
-            hideThinkingIndicator() {
-                const indicator = document.getElementById('thinkingIndicator');
-                indicator.style.display = 'none';
+            // إظهار/إخفاء الجداول
+            if (tabName === 'pending') {
+                document.getElementById('pendingOrders').style.display = 'block';
+                document.getElementById('completedOrders').style.display = 'none';
+            } else {
+                document.getElementById('pendingOrders').style.display = 'none';
+                document.getElementById('completedOrders').style.display = 'block';
             }
         }
-        
-        // إنشاء مثيل الذكاء الاصطناعي المتصل بالإنترنت
-        const internetAI = new InternetAI();
-        
-        // عناصر DOM
-        const chatMessages = document.getElementById('chatMessages');
-        const chatInput = document.getElementById('chatInput');
-        const sendBtn = document.getElementById('sendBtn');
-        const emptyChat = document.getElementById('emptyChat');
-        
-        // إضافة رسالة إلى الدردشة
-        function addMessage(content, isUser = false, source = null) {
-            if (emptyChat.style.display !== 'none') {
-                emptyChat.style.display = 'none';
-            }
+
+        // تحميل الطلبات في لوحة التحكم
+        function loadOrders() {
+            // تصفية الطلبات المعلقة والمكتملة
+            const pendingOrders = orders.filter(order => order.status === 'Pending');
+            const completedOrders = orders.filter(order => order.status === 'Completed');
             
-            const messageDiv = document.createElement('div');
-            messageDiv.className = `message ${isUser ? 'user-message' : 'ai-message'}`;
+            // تعبئة جدول الطلبات المعلقة
+            pendingOrdersBody.innerHTML = '';
+            pendingOrders.forEach(order => {
+                const row = createOrderRow(order, true);
+                pendingOrdersBody.appendChild(row);
+            });
             
-            const messageContent = document.createElement('div');
-            messageContent.className = 'message-content';
-            messageContent.textContent = content;
-            
-            messageDiv.appendChild(messageContent);
-            
-            // إضافة مصدر الإنترنت إذا كان موجوداً
-            if (source && !isUser) {
-                const sourceDiv = document.createElement('div');
-                sourceDiv.className = 'web-source';
-                sourceDiv.innerHTML = `🌐 ${source}`;
-                messageDiv.appendChild(sourceDiv);
-            }
-            
-            chatMessages.appendChild(messageDiv);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
-        
-        // إرسال رسالة
-        async function sendMessage() {
-            const message = chatInput.value.trim();
-            if (message === '') return;
-            
-            addMessage(message, true);
-            chatInput.value = '';
-            chatInput.style.height = 'auto';
-            
-            const response = await internetAI.searchInternet(message);
-            addMessage(response, false, "معلومات مباشرة من الإنترنت");
-        }
-        
-        // وظائف البحث المباشر
-        function searchWikipedia() {
-            const query = prompt("ما الذي تريد البحث عنه في ويكيبيديا؟");
-            if (query) {
-                chatInput.value = `معلومات عن ${query}`;
-                sendMessage();
-            }
-        }
-        
-        function searchNews() {
-            chatInput.value = "ما هي آخر الأخبار العالمية؟";
-            sendMessage();
-        }
-        
-        function searchWeather() {
-            const city = prompt("أي مدينة تريد معرفة طقسها؟");
-            if (city) {
-                chatInput.value = `طقس ${city}`;
-                sendMessage();
-            }
-        }
-        
-        function searchCurrency() {
-            chatInput.value = "ما هي أسعار العملات اليوم؟";
-            sendMessage();
-        }
-        
-        function searchStocks() {
-            chatInput.value = "ما هي آخر تطورات البورصة العالمية؟";
-            sendMessage();
-        }
-        
-        // محاكاة أخبار حية
-        function updateLiveNews() {
-            const newsContainer = document.getElementById('liveNews');
-            const newsItems = [
-                "تقرير: الذكاء الاصطناعي سيخلق 97 مليون وظيفة جديدة بحلول 2025",
-                "أسعار النفط ترتفع بنسبة 2% في التعاملات الآسيوية",
-                "شركة تيسلا تعلن عن تقنيات جديدة للبطاريات",
-                "كأس العالم للأندية 2025 يستعد لاستضافة الفرق المشاركة"
-            ];
-            
-            newsContainer.innerHTML = '';
-            newsItems.forEach(news => {
-                const item = document.createElement('div');
-                item.className = 'news-item';
-                item.textContent = news;
-                newsContainer.appendChild(item);
+            // تعبئة جدول الطلبات المكتملة
+            completedOrdersBody.innerHTML = '';
+            completedOrders.forEach(order => {
+                const row = createOrderRow(order, false);
+                completedOrdersBody.appendChild(row);
             });
         }
-        
-        // الأحداث
-        sendBtn.addEventListener('click', sendMessage);
-        
-        chatInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' && !e.shiftKey) {
-                e.preventDefault();
-                sendMessage();
-            }
-        });
-        
-        chatInput.addEventListener('input', function() {
-            this.style.height = 'auto';
-            this.style.height = (this.scrollHeight) + 'px';
-        });
-        
-        // تحديث الأخبار تلقائياً
-        setInterval(updateLiveNews, 30000);
-        
-        // رسالة ترحيب
-        window.addEventListener('load', () => {
-            updateLiveNews();
+
+        // إنشاء صف طلب في الجدول
+        function createOrderRow(order, showActions) {
+            const row = document.createElement('tr');
+            const serviceData = services[order.type];
             
-            setTimeout(() => {
-                if (emptyChat.style.display !== 'none') {
-                    const welcomeMessage = "🌐 مرحباً! أنا Zidan AI المتصل بالإنترنت\n\nأبحث في المصادر الحية لأعطيك أحدث المعلومات دائماً:\n\n• ويكيبيديا والموسوعات\n• الأخبار العاجلة\n• أسعار العملات والأسهم\n• أحوال الطقس\n• المعلومات العلمية الحديثة\n\nجرب أن تسألني عن:\n'أخبار اليوم' أو 'طقس الرياض' أو 'معلومات عن الذكاء الاصطناعي'";
-                    addMessage(welcomeMessage, false, "نظام متصل بالإنترنت");
-                    emptyChat.style.display = 'none';
-                }
-            }, 2000);
-        });
-        
-        // التركيز على حقل الإدخال
-        document.addEventListener('click', () => {
-            chatInput.focus();
-        });
+            row.innerHTML = `
+                <td>${order.id}</td>
+                <td>${serviceData.title}</td>
+                <td>${order.packageAmount}</td>
+                <td>${order.price}ج</td>
+                <td>${order.buyerEmail}</td>
+                <td>${order.buyerPhone}</td>
+                <td>${order.buyerUsername || order.buyerPost}</td>
+                <td class="status-${order.status.toLowerCase()}">${order.status === 'Pending' ? 'معلق' : 'مكتمل'}</td>
+                ${showActions ? '<td><button class="complete-btn" data-id="' + order.id + '">تم</button></td>' : '<td></td>'}
+            `;
+            
+            // إضافة حدث للزر "تم" إذا كان موجودًا
+            if (showActions) {
+                const completeBtn = row.querySelector('.complete-btn');
+                completeBtn.addEventListener('click', function() {
+                    completeOrder(order.id);
+                });
+            }
+            
+            return row;
+        }
+
+        // إكمال الطلب
+        function completeOrder(orderId) {
+            // تحديث حالة الطلب
+            const orderIndex = orders.findIndex(order => order.id === orderId);
+            if (orderIndex !== -1) {
+                orders[orderIndex].status = 'Completed';
+                saveOrders();
+                
+                // إرسال إيميل للعميل
+                sendCustomerEmail(orders[orderIndex]);
+                
+                // إعادة تحميل الطلبات
+                loadOrders();
+                
+                alert('تم تحديث حالة الطلب وإرسال إيميل للعميل.');
+            }
+        }
     </script>
 </body>
 </html>
